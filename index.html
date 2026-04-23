@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfólio e currículo de Seu Nome — desenvolvedor e estudante." />
+  <title>Seu Nome — Portfólio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div class="noise"></div>
+
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="#hero" class="header__logo">SN<span class="dot">.</span></a>
+      <nav class="nav">
+        <a href="#sobre" class="nav__link">Sobre</a>
+        <a href="#formacao" class="nav__link">Formação</a>
+        <a href="#habilidades" class="nav__link">Habilidades</a>
+        <a href="#projetos" class="nav__link">Projetos</a>
+        <a href="#contato" class="nav__link nav__link--cta">Contato</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="#sobre" class="mobile-nav__link">Sobre</a>
+    <a href="#formacao" class="mobile-nav__link">Formação</a>
+    <a href="#habilidades" class="mobile-nav__link">Habilidades</a>
+    <a href="#projetos" class="mobile-nav__link">Projetos</a>
+    <a href="#contato" class="mobile-nav__link">Contato</a>
+  </nav>
+
+  <main>
+
+    <section class="hero" id="hero">
+      <div class="hero__content">
+        <p class="hero__eyebrow reveal">Olá, eu sou</p>
+        <h1 class="hero__name reveal">Seu<br /><em>Nome</em></h1>
+        <p class="hero__role reveal">Desenvolvedor Web <span class="divider">/</span> Estudante de TI</p>
+        <div class="hero__actions reveal">
+          <a href="#projetos" class="btn btn--primary">Ver projetos</a>
+          <a href="#contato" class="btn btn--ghost">Entrar em contato</a>
+        </div>
+      </div>
+      <div class="hero__deco" aria-hidden="true">
+        <div class="hero__circle"></div>
+        <div class="hero__line"></div>
+      </div>
+      <a href="#sobre" class="scroll-hint" aria-label="Rolar para baixo">
+        <span class="scroll-hint__label">scroll</span>
+        <span class="scroll-hint__arrow"></span>
+      </a>
+    </section>
+
+    <section class="section" id="sobre">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="label">01 — Sobre</span>
+          <h2 class="section__title">Quem sou eu</h2>
+        </div>
+        <div class="about__grid">
+          <div class="about__text reveal">
+            <p class="lead">
+              Sou estudante de <strong>Tecnologia da Informação</strong> apaixonado por construir soluções digitais que fazem sentido de verdade.
+            </p>
+            <p>
+              Comuto todos os dias de ônibus para a faculdade — esse tempo virou meu laboratório: podcasts, artigos, cursos. Acredito que consistência diária supera talento esporádico.
+            </p>
+            <p>
+              Busco minha primeira experiência profissional onde possa contribuir com energia e curiosidade enquanto absorvo o máximo possível do time ao redor.
+            </p>
+          </div>
+          <div class="about__card reveal">
+            <div class="about__photo-wrapper">
+              <img src="images/foto.jpg" alt="Foto de Seu Nome" class="about__photo" onerror="this.closest('.about__photo-wrapper').classList.add('no-photo')" />
+              <div class="about__photo-placeholder">SN</div>
+            </div>
+            <ul class="about__details">
+              <li>
+                <span class="about__detail-label">Localização</span>
+                <span>Chapecó, SC</span>
+              </li>
+              <li>
+                <span class="about__detail-label">Status</span>
+                <span class="status-badge">Disponível para estágio</span>
+              </li>
+              <li>
+                <span class="about__detail-label">Email</span>
+                <a href="mailto:seuemail@email.com">seuemail@email.com</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="formacao">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="label">02 — Formação</span>
+          <h2 class="section__title">Educação</h2>
+        </div>
+        <div class="timeline">
+
+          <div class="timeline__item reveal">
+            <div class="timeline__dot"></div>
+            <div class="timeline__body">
+              <span class="timeline__period">2023 — 2026</span>
+              <h3 class="timeline__title">Tecnologia em Análise e Desenvolvimento de Sistemas</h3>
+              <p class="timeline__place">Nome da Faculdade — Chapecó, SC</p>
+              <p class="timeline__desc">Formação técnica com foco em desenvolvimento de software, banco de dados, redes e infraestrutura.</p>
+            </div>
+          </div>
+
+          <div class="timeline__item reveal">
+            <div class="timeline__dot"></div>
+            <div class="timeline__body">
+              <span class="timeline__period">2020 — 2022</span>
+              <h3 class="timeline__title">Ensino Médio</h3>
+              <p class="timeline__place">Nome da Escola — Chapecó, SC</p>
+              <p class="timeline__desc">Conclusão do ensino médio com destaque em matemática e ciências exatas.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="habilidades">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="label">03 — Habilidades</span>
+          <h2 class="section__title">O que eu sei fazer</h2>
+        </div>
+        <div class="skills__grid">
+
+          <div class="skill-group reveal">
+            <h3 class="skill-group__title">Linguagens</h3>
+            <ul class="skill-list">
+              <li class="skill-item">
+                <span class="skill-item__name">HTML / CSS</span>
+                <div class="skill-item__bar"><div class="skill-item__fill" style="--w: 85%"></div></div>
+              </li>
+              <li class="skill-item">
+                <span class="skill-item__name">JavaScript</span>
+                <div class="skill-item__bar"><div class="skill-item__fill" style="--w: 65%"></div></div>
+              </li>
+              <li class="skill-item">
+                <span class="skill-item__name">Python</span>
+                <div class="skill-item__bar"><div class="skill-item__fill" style="--w: 50%"></div></div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="skill-group reveal">
+            <h3 class="skill-group__title">Ferramentas</h3>
+            <ul class="skill-tags">
+              <li>Git</li>
+              <li>GitHub</li>
+              <li>VS Code</li>
+              <li>Figma</li>
+              <li>MySQL</li>
+              <li>Linux</li>
+            </ul>
+          </div>
+
+          <div class="skill-group reveal">
+            <h3 class="skill-group__title">Idiomas</h3>
+            <ul class="skill-list">
+              <li class="skill-item">
+                <span class="skill-item__name">Português</span>
+                <div class="skill-item__bar"><div class="skill-item__fill" style="--w: 100%"></div></div>
+              </li>
+              <li class="skill-item">
+                <span class="skill-item__name">Inglês</span>
+                <div class="skill-item__bar"><div class="skill-item__fill" style="--w: 60%"></div></div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt" id="projetos">
+      <div class="container">
+        <div class="section__header reveal">
+          <span class="label">04 — Projetos</span>
+          <h2 class="section__title">O que já construí</h2>
+        </div>
+        <div class="projects__grid">
+
+          <article class="project-card reveal">
+            <div class="project-card__image">
+              <img src="images/projeto1.jpg" alt="Projeto 1" onerror="this.style.display='none'" />
+              <div class="project-card__overlay">
+                <span>Ver projeto →</span>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__tags">
+                <span>HTML</span><span>CSS</span><span>JS</span>
+              </div>
+              <h3 class="project-card__title">Nome do Projeto</h3>
+              <p class="project-card__desc">Descrição breve do que o projeto faz, qual problema resolve e o que você aprendeu construindo ele.</p>
+              <div class="project-card__links">
+                <a href="#" class="link-arrow">GitHub</a>
+                <a href="#" class="link-arrow">Demo</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-card__image">
+              <img src="images/projeto2.jpg" alt="Projeto 2" onerror="this.style.display='none'" />
+              <div class="project-card__overlay">
+                <span>Ver projeto →</span>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__tags">
+                <span>Python</span><span>MySQL</span>
+              </div>
+              <h3 class="project-card__title">Nome do Projeto</h3>
+              <p class="project-card__desc">Descrição breve do que o projeto faz, qual problema resolve e o que você aprendeu construindo ele.</p>
+              <div class="project-card__links">
+                <a href="#" class="link-arrow">GitHub</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project-card reveal">
+            <div class="project-card__image">
+              <div class="project-card__overlay">
+                <span>Ver projeto →</span>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__tags">
+                <span>React</span><span>API</span>
+              </div>
+              <h3 class="project-card__title">Nome do Projeto</h3>
+              <p class="project-card__desc">Descrição breve do que o projeto faz, qual problema resolve e o que você aprendeu construindo ele.</p>
+              <div class="project-card__links">
+                <a href="#" class="link-arrow">GitHub</a>
+                <a href="#" class="link-arrow">Demo</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contato">
+      <div class="container container--narrow">
+        <div class="section__header reveal">
+          <span class="label">05 — Contato</span>
+          <h2 class="section__title">Vamos conversar</h2>
+        </div>
+        <p class="contact__lead reveal">
+          Estou aberto a oportunidades de estágio e projetos colaborativos. Se quiser trocar uma ideia, manda mensagem!
+        </p>
+        <div class="contact__links reveal">
+          <a href="mailto:seuemail@email.com" class="contact__link">
+            <span class="contact__link-icon">✉</span>
+            <span>seuemail@email.com</span>
+          </a>
+          <a href="https://linkedin.com/in/seuusuario" target="_blank" rel="noopener" class="contact__link">
+            <span class="contact__link-icon">in</span>
+            <span>linkedin.com/in/seuusuario</span>
+          </a>
+          <a href="https://github.com/seuusuario" target="_blank" rel="noopener" class="contact__link">
+            <span class="contact__link-icon">⌥</span>
+            <span>github.com/seuusuario</span>
+          </a>
+        </div>
+        <div class="contact__cta reveal">
+          <a href="images/curriculo.pdf" download class="btn btn--primary">Baixar currículo PDF</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Feito com cuidado por <strong>Seu Nome</strong> — <span id="year"></span></p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
