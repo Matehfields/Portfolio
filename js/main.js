@@ -69,3 +69,59 @@ const sectionObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.4 });
 
 sections.forEach(section => sectionObserver.observe(section));
+
+const carousel = document.getElementById('carousel');
+const prevBtn = document.getElementById('carouselPrev');
+const nextBtn = document.getElementById('carouselNext');
+const dotsContainer = document.getElementById('carouselDots');
+
+if (carousel) {
+  const cards = carousel.querySelectorAll('.carousel-card');
+  let current = 0;
+
+  cards.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', `Projeto ${i + 1}`);
+    dot.addEventListener('click', () => goTo(i));
+    dotsContainer.appendChild(dot);
+  });
+
+  function checkOverflow() {
+    const isOverflowing = carousel.scrollWidth > carousel.clientWidth + 4;
+    carousel.classList.toggle('carousel--overflow', isOverflowing);
+    const controls = document.querySelector('.carousel-controls');
+    if (controls) controls.style.visibility = isOverflowing ? 'visible' : 'hidden';
+  }
+
+  function goTo(index) {
+    current = Math.max(0, Math.min(index, cards.length - 1));
+    cards[current].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    dotsContainer.querySelectorAll('.carousel-dot').forEach((d, i) => d.classList.toggle('active', i === current));
+    prevBtn.disabled = current === 0;
+    nextBtn.disabled = current === cards.length - 1;
+  }
+
+  prevBtn.addEventListener('click', () => goTo(current - 1));
+  nextBtn.addEventListener('click', () => goTo(current + 1));
+
+  let scrollTimer;
+  carousel.addEventListener('scroll', () => {
+    clearTimeout(scrollTimer);
+    scrollTimer = setTimeout(() => {
+      const cardWidth = cards[0].offsetWidth + 24;
+      const offset = carousel.scrollLeft + carousel.clientWidth / 2;
+      const idx = Math.min(Math.round((offset - cardWidth / 2) / cardWidth), cards.length - 1);
+      if (idx !== current) {
+        current = Math.max(0, idx);
+        dotsContainer.querySelectorAll('.carousel-dot').forEach((d, i) => d.classList.toggle('active', i === current));
+        prevBtn.disabled = current === 0;
+        nextBtn.disabled = current === cards.length - 1;
+      }
+    }, 80);
+  }, { passive: true });
+
+  checkOverflow();
+  const ro = new ResizeObserver(checkOverflow);
+  ro.observe(carousel);
+}
