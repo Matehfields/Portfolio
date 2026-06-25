@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://matehfields.com/sitemap.xml
