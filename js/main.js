@@ -7,18 +7,37 @@ window.addEventListener('scroll', () => {
 
 const navToggle = document.getElementById('navToggle');
 const mobileNav = document.getElementById('mobileNav');
+const desktopMenuQuery = window.matchMedia('(min-width: 901px)');
+
+function setMobileMenuState(isOpen) {
+  mobileNav.classList.toggle('open', isOpen);
+  navToggle.classList.toggle('open', isOpen);
+  navToggle.setAttribute('aria-expanded', String(isOpen));
+  navToggle.setAttribute('aria-label', isOpen ? 'Fechar menu' : 'Abrir menu');
+  mobileNav.setAttribute('aria-hidden', String(!isOpen));
+}
+
+function closeMobileMenu() {
+  setMobileMenuState(false);
+}
 
 navToggle.addEventListener('click', () => {
-  const isOpen = mobileNav.classList.toggle('open');
-  navToggle.classList.toggle('open', isOpen);
-  navToggle.setAttribute('aria-expanded', isOpen);
+  setMobileMenuState(!mobileNav.classList.contains('open'));
 });
 
 mobileNav.querySelectorAll('.mobile-nav__link').forEach(link => {
-  link.addEventListener('click', () => {
-    mobileNav.classList.remove('open');
-    navToggle.classList.remove('open');
-  });
+  link.addEventListener('click', closeMobileMenu);
+});
+
+desktopMenuQuery.addEventListener('change', event => {
+  if (event.matches) closeMobileMenu();
+});
+
+window.addEventListener('keydown', event => {
+  if (event.key === 'Escape' && mobileNav.classList.contains('open')) {
+    closeMobileMenu();
+    navToggle.focus();
+  }
 });
 
 const revealObserver = new IntersectionObserver((entries) => {

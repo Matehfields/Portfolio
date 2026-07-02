@@ -29,13 +29,14 @@
         <a href="#projetos" class="nav__link">Projetos</a>
         <a href="#contato" class="nav__link nav__link--cta">Contato</a>
       </nav>
-      <button class="nav-toggle" id="navToggle" aria-label="Menu">
-        <span></span><span></span>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Abrir menu" aria-controls="mobileNav" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
       </button>
     </div>
   </header>
 
-  <nav class="mobile-nav" id="mobileNav">
+  <nav class="mobile-nav" id="mobileNav" aria-hidden="true">
     <a href="#sobre" class="mobile-nav__link">Sobre</a>
     <a href="#formacao" class="mobile-nav__link">Formação</a>
     <a href="#habilidades" class="mobile-nav__link">Habilidades</a>
@@ -156,7 +157,7 @@
         </div>
         <div class="skills-block reveal">
           <h3 class="skill-group__title">Linguagens utilizadas</h3>
-          <div class="tool-grid">
+          <div class="tool-grid tool-grid--languages">
             <div class="tool-card">
               <img src="images/html5.webp" alt="HTML5" class="tool-card__icon" />
               <span>HTML</span>
@@ -186,8 +187,8 @@
               <span>C++</span>
             </div>
             <div class="tool-card">
-              <img src="images/flutter.webp" alt="Flutter" class="tool-card__icon" />
-              <span>Flutter</span>
+              <img src="images/dart.png" alt="Dart" class="tool-card__icon" />
+              <span>Dart</span>
             </div>
             <div class="tool-card">
               <img src="images/mysql.png" alt="MySQL" class="tool-card__icon" />
@@ -207,6 +208,10 @@
             <div class="tool-card">
               <img src="images/github.svg" alt="GitHub" class="tool-card__icon" />
               <span>GitHub</span>
+            </div>
+            <div class="tool-card">
+              <img src="images/flutter.webp" alt="Flutter" class="tool-card__icon" />
+              <span>Flutter</span>
             </div>
             <div class="tool-card">
               <img src="images/figma.webp" alt="Figma" class="tool-card__icon" />
@@ -371,11 +376,11 @@
             <span>github.com/Matehfields</span>
           </a>
         </div>
-        <!--
+        
         <div class="contact__cta reveal">
-          <a href="images/curriculo.pdf" download class="btn btn--primary">Baixar currículo PDF</a>
+          <a href="attachments/curriculo.pdf" download class="btn btn--primary">Baixar currículo PDF</a>
         </div>
-        -->
+        
       </div>
     </section>
 
